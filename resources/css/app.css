@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap');
+
+/* animate.css */
+@import "../../node_modules/animate.css/source/animate.css";
+
+/* @fontawesome */
+@import "../../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/solid.css";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/svg-with-js.css";
+
+/* bootstrap5 */
+@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+@import "../../node_modules/bootstrap/dist/css/bootstrap-reboot.css";
+@import "../../node_modules/bootstrap/dist/css/bootstrap-utilities.css";
+
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+/*datatables.net*/
+@import "../../node_modules/datatables.net-bs5/css/dataTables.bootstrap5.css";
+@import "../../node_modules/datatables.net-colreorder-bs5/css/colReorder.bootstrap5.css";
+@import "../../node_modules/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.css";
+@import "../../node_modules/datatables.net-responsive-bs5/css/responsive.bootstrap5.css";
+
+@import "../../node_modules/@claviska/jquery-minicolors/jquery.minicolors.css";
+@import "../../node_modules/@mdi/font/css/materialdesignicons.css";
+
+@import "../../node_modules/jquery-ui/themes/base/core.css";
+@import "../../node_modules/jquery-ui/themes/base/all.css";
+
+@import "./bootstrapValidator4/css/bootstrapValidator.css";
+
