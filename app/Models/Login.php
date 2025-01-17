@@ -87,10 +87,10 @@ class Login extends Authenticatable implements MustVerifyEmail
 
 	// custom email reset password in
 	// https://laracasts.com/discuss/channels/laravel/how-to-override-the-tomail-function-in-illuminateauthnotificationsresetpasswordphp
-	public function sendPasswordResetNotification($token)
-	{
-			$this->notify(new ResetPassword($token));
-	}
+	// public function sendPasswordResetNotification($token)
+	// {
+	// 		$this->notify(new ResetPassword($token));
+	// }
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
@@ -151,4 +151,3 @@ class Login extends Authenticatable implements MustVerifyEmail
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 }
-
