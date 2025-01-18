@@ -16,7 +16,7 @@ return new class extends Migration
 			$table->foreignId('user_id')->nullable()->index();
 			$table->string('username')->unique();
 			$table->string('password');
-			$table->boolean('status');
+			$table->boolean('active');
 			$table->rememberToken();
 			$table->timestamps();
 		});

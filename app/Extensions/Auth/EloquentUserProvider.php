@@ -124,6 +124,6 @@ class EloquentUserProvider extends UserProvider
 		}
 
 		// return $this->hasher->check($plain, $hashed);
-		return ($this->hasher->check($plain, $hashed) && $user->belongstouser->status == true && $user->status == true);
+		return ($this->hasher->check($plain, $hashed) && $user->belongstouser->active == true && $user->active == true);
 	}
 }
