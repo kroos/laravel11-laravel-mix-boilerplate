@@ -107,7 +107,7 @@ $currentYear = Carbon::now()->year;
 				@include('layouts.error-messages')
 			@endif
 		<!-- </div> -->
-		<div class="container d-flex align-items-center justify-content-center rounded">
+		<div class="container align-items-center justify-content-center rounded">
 			@yield('content')
 		</div>
 	</div>

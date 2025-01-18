@@ -1,47 +1,63 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('layouts.app')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+@section('content')
+<div class="col-sm-12 d-flex flex-column align-items-center text-center">
+	<h3>Sign In</h3>
+	<form method="POST" action="{{ route('login') }}" id="form" class=" needs-validation">
+	@csrf
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="username" :value="__('Username')" />
-            <x-text-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('username')" class="mt-2" />
-        </div>
+		<div class="form-group row m-2 {{ $errors->has('username') ? 'has-error' : '' }}">
+			<label for="username" class="col-sm-4 col-form-label col-form-label-sm">Username : </label>
+			<div class="col-sm-8 {{ ($errors->has('username'))?'is-invalid':NULL }}">
+				<input type="text" id="username" value="{{ old('username') }}" class="form-control form-control-sm {{ ($errors->has('username'))?'is-invalid':NULL }}" placeholder="Username">
+				<div class="invalid-feedback text-start text-danger fw-lighter">
+					@if ($errors->has('username'))
+						@foreach ($errors->get('username') as $error)
+							<span class="">{{ $error }}</span>
+						@endforeach
+					@endif
+				</div>
+			</div>
+		</div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+		<div class="form-group row m-2 {{ $errors->has('password') ? 'has-error' : '' }}">
+			<label for="password" class="col-sm-4 col-form-label col-form-label-sm">Password : </label>
+			<div class="col-sm-8 {{ ($errors->has('password'))?'is-invalid':NULL }}">
+				<input type="password" id="password" value="{{ old('password') }}" class="form-control form-control-sm {{ ($errors->has('password'))?'is-invalid':NULL }}" placeholder="Password">
+				<div class="invalid-feedback text-start text-danger fw-lighter">
+					@if ($errors->has('password'))
+						@foreach ($errors->get('password') as $error)
+							<span class="">{{ $error }}</span>
+						@endforeach
+					@endif
+				</div>
+			</div>
+		</div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+		<!-- Remember Me -->
+			<div class="form-check col-sm-5 m-4">
+				<input name="remember" class="form-check-input rounded" type="checkbox" value="" id="remember_me">
+				<label class="form-check-label" for="remember_me">
+					Remember me
+				</label>
+			</div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+		<div class="col-sm-12 justify-content-end m-4">
+			@if (Route::has('password.request'))
+				<a class="" href="{{ route('password.request') }}">
+					{{ __('Forgot your password?') }}
+				</a>
+			@endif
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
+			<button type="submit" class="btn btn-sm btn-primary m-3">
+				{{ __('Log in') }}
+			</button>
+		</div>
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+	</form>
+</div>
+@endsection
+
+@section('js')
+@endsection
