@@ -7,8 +7,8 @@
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarColor01">
-			<ul class="navbar-nav me-auto">
+		<div class="collapse navbar-collapse justify-content-evenly" id="navbarColor01">
+			<ul class="navbar-nav">
 				<li class="nav-item">
 						<a class="nav-link active" href="@auth{{ url('/dashboard') }}@else{{ url('/') }}@endauth">@auth Dashboard @else Home @endauth
 							<span class="visually-hidden">(current)</span>
@@ -24,24 +24,24 @@
 			@if (Route::has('login'))
 				@auth
 
-						<div class="dropdown">
-							<a href="{{ url('/dashboard') }}" class="btn btn-sm btn-outline-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->belongstouser->name }}</a>
-							<ul class="dropdown-menu">
+					<div class="dropdown">
+						<a href="{{ url('/dashboard') }}" class="btn btn-sm btn-outline-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->belongstouser->name }}</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="fa-regular fa-user"></i> Profile</a>
+							</li>
+							<li>
+								<!-- notification -->
+								@include('layouts.notification')
+							</li>
+							<form method="POST" action="{{ route('logout') }}">
+								@csrf
 								<li>
-									<a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="fa-regular fa-user"></i> Profile</a>
+									<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"><i class="fas fa-light fa-right-from-bracket"></i> Log Out</a>
 								</li>
-								<li>
-									<!-- notification -->
-									@include('layouts.notification')
-								</li>
-								<form method="POST" action="{{ route('logout') }}">
-									@csrf
-									<li>
-										<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"><i class="fas fa-light fa-right-from-bracket"></i> Log Out</a>
-									</li>
-								</form>
-							</ul>
-						</div>
+							</form>
+						</ul>
+					</div>
 
 				@else
 					<a class="btn btn-sm btn-secondary mx-1" href="{{ route('login') }}">Sign in</a>
