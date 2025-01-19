@@ -1,25 +1,33 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-    </div>
+@extends('layouts.app')
 
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@section('content')
+<div class="col-sm-12 d-flex flex-column align-items-center justify-content-center">
+	<h3>Forgot your password? No problem. Just let us know your username and we will email you a password reset link that will allow you to choose a new one.</h3>
+	<form method="POST" action="{{ route('password.email') }}" id="form" class="needs-validation">
+		@csrf
 
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
+		<div class="form-group row m-2 {{ $errors->has('username') ? 'has-error' : '' }}">
+			<label for="username" class="col-sm-4 col-form-label col-form-label-sm">Username : </label>
+			<div class="col-sm-8 {{ ($errors->has('username'))?'is-invalid':NULL }}">
+				<input type="text" name="username" id="username" value="{{ old('username') }}" class="form-control form-control-sm {{ ($errors->has('username'))?'is-invalid':NULL }}" placeholder="Username">
+				<div class="invalid-feedback text-start text-danger fw-lighter">
+					@if ($errors->has('username'))
+						@foreach ($errors->get('username') as $error)
+							<span class="">{{ $error }}</span>
+						@endforeach
+					@endif
+				</div>
+			</div>
+		</div>
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="username" :value="__('Username')" />
-            <x-text-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
-            <x-input-error :messages="$errors->get('username')" class="mt-2" />
-        </div>
+		<div class="text-center m-0">
+			<button type="submit" class="btn btn-sm btn-primary m-3">
+				{{ __('Password Reset Link') }}
+			</button>
+		</div>
+	</form>
+</div>
+@endsection
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+@section('js')
+@endsection

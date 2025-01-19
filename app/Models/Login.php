@@ -24,7 +24,7 @@ use App\Notifications\ResetPassword;
 
 class Login extends Authenticatable implements MustVerifyEmail
 {
-	protected $connection = 'mysql';
+	// protected $connection = 'mysql';
 	protected $table = 'logins';
 
 	// use HasApiTokens, HasFactory, Notifiable, SoftDeletes;

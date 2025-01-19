@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 
 // db relation class to load
+// use Illuminate\Database\Eloquent\SoftDeletes;
 // use Illuminate\Database\Eloquent\Relations\HasOne;
 // use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 // use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
@@ -22,7 +22,7 @@ class User extends Authenticatable
 	/** @use HasFactory<\Database\Factories\UserFactory> */
 	use HasFactory, Notifiable;
 
-	protected $connection = 'mysql';
+	// protected $connection = 'mysql';
 	protected $table = 'users';
 	protected $dates = ['deleted_at'];
 

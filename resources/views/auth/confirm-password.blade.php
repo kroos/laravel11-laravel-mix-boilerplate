@@ -1,27 +1,33 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
-    </div>
+@extends('layouts.app')
 
-    <form method="POST" action="{{ route('password.confirm') }}">
-        @csrf
+@section('content')
+<div class="col-sm-12 d-flex flex-column align-items-center justify-content-center">
+	<h3>This is a secure area of the application. Please confirm your password before continuing.</h3>
+	<form method="POST" action="{{ route('password.confirm') }}" id="form" class="needs-validation">
+		@csrf
 
-        <!-- Password -->
-        <div>
-            <x-input-label for="password" :value="__('Password')" />
+		<div class="form-group row m-2 {{ $errors->has('password') ? 'has-error' : '' }}">
+			<label for="password" class="col-sm-4 col-form-label col-form-label-sm">Password : </label>
+			<div class="col-sm-8 {{ ($errors->has('password'))?'is-invalid':NULL }}">
+				<input type="password" name="password" id="password" value="{{ old('password') }}" class="form-control form-control-sm {{ ($errors->has('password'))?'is-invalid':NULL }}" placeholder="Password">
+				<div class="invalid-feedback text-start text-danger fw-lighter">
+					@if ($errors->has('password'))
+						@foreach ($errors->get('password') as $error)
+							<span class="">{{ $error }}</span>
+						@endforeach
+					@endif
+				</div>
+			</div>
+		</div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+		<div class="text-center m-0">
+			<button type="submit" class="btn btn-sm btn-primary m-3">
+				{{ __('Confirm') }}
+			</button>
+		</div>
+	</form>
+</div>
+@endsection
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <div class="flex justify-end mt-4">
-            <x-primary-button>
-                {{ __('Confirm') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+@section('js')
+@endsection

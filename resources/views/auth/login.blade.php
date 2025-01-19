@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-sm-12 d-flex flex-column align-items-center text-center">
+<div class="col-sm-12 d-flex flex-column align-items-center justify-content-center">
 	<h3>Sign In</h3>
 	<form method="POST" action="{{ route('login') }}" id="form" class=" needs-validation">
 	@csrf
@@ -9,7 +9,7 @@
 		<div class="form-group row m-2 {{ $errors->has('username') ? 'has-error' : '' }}">
 			<label for="username" class="col-sm-4 col-form-label col-form-label-sm">Username : </label>
 			<div class="col-sm-8 {{ ($errors->has('username'))?'is-invalid':NULL }}">
-				<input type="text" id="username" value="{{ old('username') }}" class="form-control form-control-sm {{ ($errors->has('username'))?'is-invalid':NULL }}" placeholder="Username">
+			<input type="text" name="username" id="username" value="{{ old('username') }}" class="form-control form-control-sm {{ ($errors->has('username'))?'is-invalid':NULL }}" placeholder="Username">
 				<div class="invalid-feedback text-start text-danger fw-lighter">
 					@if ($errors->has('username'))
 						@foreach ($errors->get('username') as $error)
@@ -23,7 +23,7 @@
 		<div class="form-group row m-2 {{ $errors->has('password') ? 'has-error' : '' }}">
 			<label for="password" class="col-sm-4 col-form-label col-form-label-sm">Password : </label>
 			<div class="col-sm-8 {{ ($errors->has('password'))?'is-invalid':NULL }}">
-				<input type="password" id="password" value="{{ old('password') }}" class="form-control form-control-sm {{ ($errors->has('password'))?'is-invalid':NULL }}" placeholder="Password">
+				<input type="password" id="password" name="password" value="{{ old('password') }}" class="form-control form-control-sm {{ ($errors->has('password'))?'is-invalid':NULL }}" placeholder="Password">
 				<div class="invalid-feedback text-start text-danger fw-lighter">
 					@if ($errors->has('password'))
 						@foreach ($errors->get('password') as $error)
