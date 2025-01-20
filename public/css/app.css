@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap);
 :root {
   --animate-duration: 1s;
@@ -79307,6 +79308,23 @@ div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-lin
 	color: #3c763d;
 	border-color: #3c763d;
 }
+/*Fonts*/
+
+/*Style*/
+body {
+	font-family: 'Cactus Classical Serif', serif !important;
+	font-size: 15px;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.cactus-classical-serif-regular {
+	font-family: "Cactus Classical Serif", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+
 /*@tailwind base;*/
 /*@tailwind components;*/
 /*@tailwind utilities;*/

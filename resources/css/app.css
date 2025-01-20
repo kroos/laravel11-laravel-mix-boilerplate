@@ -1,11 +1,20 @@
 /*Fonts*/
-@import url(https://fonts.googleapis.com/css?family=Sanchez:300,400,600);
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap');
 
 /*Style*/
 body {
-	font-family: 'Sanchez', serif;
+	font-family: 'Cactus Classical Serif', serif !important;
 	font-size: 15px;
+	font-weight: 400;
+	font-style: normal;
 }
+
+.cactus-classical-serif-regular {
+	font-family: "Cactus Classical Serif", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
 
 /*@tailwind base;*/
 /*@tailwind components;*/
@@ -28,6 +37,7 @@ body {
 @import "../../node_modules/bootstrap/dist/css/bootstrap-reboot.css";
 @import "../../node_modules/bootstrap/dist/css/bootstrap-utilities.css";
 
+/*bootstrap icon*/
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 /*datatables.net*/
@@ -39,7 +49,7 @@ body {
 /*minicolors*/
 @import "../../node_modules/@claviska/jquery-minicolors/jquery.minicolors.css";
 
-/*md icons*/
+/*mdi icons*/
 @import "../../node_modules/@mdi/font/css/materialdesignicons.css";
 
 /*jquery ui*/
