@@ -34,7 +34,7 @@
 		<div class="form-group row m-2 {{ $errors->has('email') ? 'has-error' : '' }}">
 			<label for="email" class="col-sm-4 col-form-label col-form-label-sm">Email : </label>
 			<div class="col-sm-8 {{ ($errors->has('email'))?'is-invalid':NULL }}">
-				<input type="text" name="email" id="email" value="{{ old('email') }}" class="form-control form-control-sm {{ ($errors->has('email'))?'is-invalid':NULL }}" placeholder="Email">
+				<input type="text" name="email" id="email" value="{{ old('email', $user->email) }}" class="form-control form-control-sm {{ ($errors->has('email'))?'is-invalid':NULL }}" placeholder="Email">
 				<div class="invalid-feedback text-start text-danger fw-lighter">
 					@if ($errors->has('email'))
 						@foreach ($errors->get('email') as $error)
