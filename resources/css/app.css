@@ -1,3 +1,12 @@
+/*Fonts*/
+@import url(https://fonts.googleapis.com/css?family=Sanchez:300,400,600);
+
+/*Style*/
+body {
+	font-family: 'Sanchez', serif;
+	font-size: 15px;
+}
+
 /*@tailwind base;*/
 /*@tailwind components;*/
 /*@tailwind utilities;*/
@@ -27,11 +36,25 @@
 @import "../../node_modules/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.css";
 @import "../../node_modules/datatables.net-responsive-bs5/css/responsive.bootstrap5.css";
 
+/*minicolors*/
 @import "../../node_modules/@claviska/jquery-minicolors/jquery.minicolors.css";
+
+/*md icons*/
 @import "../../node_modules/@mdi/font/css/materialdesignicons.css";
 
+/*jquery ui*/
 @import "../../node_modules/jquery-ui/themes/base/core.css";
 @import "../../node_modules/jquery-ui/themes/base/all.css";
 
+/*pretty checkbox*/
+@import "../../node_modules/pretty-checkbox/dist/pretty-checkbox.css";
+
+/*select2 bootstrap5 themes*/
+@import "../../node_modules/select2-bootstrap-5-theme/dist/select2-bootstrap-5-theme.css";
+
+/*sweet alert 2*/
+@import "../../node_modules/sweetalert2/dist/sweetalert2.css";
+
+/*jquery validators*/
 @import "./bootstrapValidator4/css/bootstrapValidator.css";
 
