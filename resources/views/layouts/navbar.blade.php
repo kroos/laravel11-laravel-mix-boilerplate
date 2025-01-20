@@ -1,5 +1,5 @@
 <!-- navigator -->
-<nav class="navbar navbar-expand-lg bg-primary align-self-start rounded m-0 mb-1" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-primary align-self-start rounded m-0 mb-1" data-bs-theme="dark" style="--bs-bg-opacity: .25;">
 	<div class="container-fluid">
 			<a class="navbar-brand" href="@auth{{ url('/dashboard') }}@else{{ url('/') }}@endauth">
 				{!! config('app.name') !!}<img src="">
@@ -7,8 +7,8 @@
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse justify-content-evenly" id="navbarColor01">
-			<ul class="navbar-nav">
+		<div class="collapse navbar-collapse" id="navbarColor01">
+			<ul class="navbar-nav me-auto">
 				<li class="nav-item">
 						<a class="nav-link active" href="@auth{{ url('/dashboard') }}@else{{ url('/') }}@endauth">@auth Dashboard @else Home @endauth
 							<span class="visually-hidden">(current)</span>
@@ -23,8 +23,7 @@
 			</ul>
 			@if (Route::has('login'))
 				@auth
-
-					<div class="dropdown">
+					<div class="dropdown me-5">
 						<a href="{{ url('/dashboard') }}" class="btn btn-sm btn-outline-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->belongstouser->name }}</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -44,9 +43,9 @@
 					</div>
 
 				@else
-					<a class="btn btn-sm btn-secondary mx-1" href="{{ route('login') }}">Sign in</a>
+					<a class="btn btn-sm btn-secondary {{ (Route::has('register'))?'me-1':'me-5' }}" href="{{ route('login') }}">Sign in</a>
 					@if (Route::has('register'))
-						<a href="{{ route('register') }}" class="btn btn-sm btn-secondary mx-1">Sign up</a>
+						<a href="{{ route('register') }}" class="btn btn-sm btn-secondary me-5">Sign up</a>
 					@endif
 				@endauth
 			@endif

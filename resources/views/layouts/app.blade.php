@@ -32,7 +32,7 @@ $currentYear = Carbon::now()->year;
 	@livewireStyles
 
 </head>
-<body class=" min-vh-100 row align-items-center justify-content-center mx-auto bg-info-subtle border border-primary">
+<body class="min-vh-100 row align-items-center justify-content-center mx-auto bg-secondary bg-opacity-75">
 	@include('layouts.navbar')
 
 	<div class="container align-self-center m-0">
