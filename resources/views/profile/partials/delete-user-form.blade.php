@@ -1,6 +1,6 @@
 <section class="space-y-6">
 	<header>
-		<h2">
+		<h2>
 			{{ __('Delete Account') }}
 		</h2>
 
@@ -29,25 +29,27 @@
 			</p>
 
 			<div class="mt-6">
-				<x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
-
-				<x-text-input
-					id="password"
-					name="password"
-					type="password"
-					class="mt-1 block w-3/4"
-					placeholder="{{ __('Password') }}"
-				/>
-
-				<x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+				<div class="form-group row m-2 {{ $errors->has('password') ? 'has-error' : '' }}">
+					<label for="password" class="col-sm-4 col-form-label col-form-label-sm">Password : </label>
+					<div class="col-sm-8 {{ ($errors->has('password'))?'is-invalid':NULL }}">
+						<input type="password" name="password" id="password" value="{{ old('password') }}" class="form-control form-control-sm {{ ($errors->has('password'))?'is-invalid':NULL }}" placeholder="Password">
+						<div class="invalid-feedback text-start text-danger fw-lighter">
+							@if ($errors->has('password'))
+								@foreach ($errors->get('password') as $error)
+									<span class="">{{ $error }}</span>
+								@endforeach
+							@endif
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div class="mt-6 flex justify-end">
-				<x-secondary-button x-on:click="$dispatch('close')">
+				<x-secondary-button x-on:click="$dispatch('close')"  class="btn btn-sm btn-outline-secondary">
 					{{ __('Cancel') }}
 				</x-secondary-button>
 
-				<x-danger-button class="ms-3">
+				<x-danger-button class="btn btn-sm btn-danger m-3">
 					{{ __('Delete Account') }}
 				</x-danger-button>
 			</div>

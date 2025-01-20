@@ -55535,8 +55535,6 @@ textarea.form-control-lg {
   margin-left: 0.255em;
   vertical-align: 0.255em;
   content: "";
-}
-.dropstart .dropdown-toggle::after {
   display: none;
 }
 .dropstart .dropdown-toggle::before {
@@ -77199,7 +77197,6 @@ div.dtr-modal div.dtr-modal-display {
   height: -moz-fit-content;
   height: fit-content;
   max-height: 75%;
-  overflow: auto;
   margin: auto;
   z-index: 102;
   overflow: auto;
@@ -109412,9 +109409,9 @@ a.ui-button:active,
 	color: #3c763d;
 	border-color: #3c763d;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*@tailwind base;*/
+/*@tailwind components;*/
+/*@tailwind utilities;*/
 
 /* animate.css */
 
