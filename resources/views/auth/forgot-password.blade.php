@@ -6,17 +6,11 @@
 	<form method="POST" action="{{ route('password.email') }}" id="form" class="needs-validation">
 		@csrf
 
-		<div class="form-group row m-2 {{ $errors->has('username') ? 'has-error' : '' }}">
+		<div class="form-group row m-2 @error('username') has-error @enderror">
 			<label for="username" class="col-sm-4 col-form-label col-form-label-sm">Username : </label>
-			<div class="col-sm-8 {{ ($errors->has('username'))?'is-invalid':NULL }}">
-				<input type="text" name="username" id="username" value="{{ old('username') }}" class="form-control form-control-sm {{ ($errors->has('username'))?'is-invalid':NULL }}" placeholder="Username">
-				<div class="invalid-feedback text-start text-danger fw-lighter">
-					@if ($errors->has('username'))
-						@foreach ($errors->get('username') as $error)
-							<span class="">{{ $error }}</span>
-						@endforeach
-					@endif
-				</div>
+			<div class="col-sm-8">
+				<input type="text" name="username" id="username" value="{{ old('username') }}" class="form-control form-control-sm @error('username') is-invalid @enderror" placeholder="Username">
+				@error('username') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 

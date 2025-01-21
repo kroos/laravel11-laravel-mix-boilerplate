@@ -10,7 +10,7 @@
 			<label for="username" class="col-sm-4 col-form-label col-form-label-sm">Username : </label>
 			<div class="col-sm-8">
 				<input type="text" name="username" id="username" value="{{ old('username') }}" class="form-control form-control-sm @error('username') is-invalid @enderror" placeholder="Username">
-				@error('username') <div class="invalid-feedback">{{ $message }}</div> @enderror
+				@error('username') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 
@@ -18,7 +18,7 @@
 			<label for="password" class="col-sm-4 col-form-label col-form-label-sm">Password : </label>
 			<div class="col-sm-8">
 				<input type="password" id="password" name="password" value="{{ old('password') }}" class="form-control form-control-sm @error('username') is-invalid @enderror" placeholder="Password">
-				@error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
+				@error('password') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 

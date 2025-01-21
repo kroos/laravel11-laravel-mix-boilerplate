@@ -29,17 +29,11 @@
 			</p>
 
 			<div class="mt-6">
-				<div class="form-group row m-2 {{ $errors->has('password') ? 'has-error' : '' }}">
+				<div class="form-group row m-2 @error('password') has-error @enderror">
 					<label for="password" class="col-sm-4 col-form-label col-form-label-sm">Password : </label>
-					<div class="col-sm-8 {{ ($errors->has('password'))?'is-invalid':NULL }}">
-						<input type="password" name="password" id="password" value="{{ old('password') }}" class="form-control form-control-sm {{ ($errors->has('password'))?'is-invalid':NULL }}" placeholder="Password">
-						<div class="invalid-feedback text-start text-danger fw-lighter">
-							@if ($errors->has('password'))
-								@foreach ($errors->get('password') as $error)
-									<span class="">{{ $error }}</span>
-								@endforeach
-							@endif
-						</div>
+					<div class="col-sm-8">
+						<input type="password" name="password" id="password" value="{{ old('password') }}" class="form-control form-control-sm @error('username') is-invalid @enderror" placeholder="Password">
+						@error('password') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 					</div>
 				</div>
 			</div>

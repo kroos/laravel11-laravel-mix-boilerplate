@@ -7,45 +7,27 @@
 	<form method="POST" action="{{ route('password.store') }}" id="form" class="needs-validation">
 		@csrf
 
-		<div class="form-group row m-2 {{ $errors->has('username') ? 'has-error' : '' }}">
+		<div class="form-group row m-2 @error('username') has-error @enderror">
 			<label for="username" class="col-sm-4 col-form-label col-form-label-sm">Username : </label>
-			<div class="col-sm-8 {{ ($errors->has('username'))?'is-invalid':NULL }}">
-				<input type="text" name="username" id="username" value="{{ old('username') }}" class="form-control form-control-sm {{ ($errors->has('username'))?'is-invalid':NULL }}" placeholder="Username">
-				<div class="invalid-feedback text-start text-danger fw-lighter">
-					@if ($errors->has('username'))
-						@foreach ($errors->get('username') as $error)
-							<span class="">{{ $error }}</span>
-						@endforeach
-					@endif
-				</div>
+			<div class="col-sm-8">
+				<input type="text" name="username" id="username" value="{{ old('username') }}" class="form-control form-control-sm @error('username') is-invalid @enderror" placeholder="Username">
+				@error('username') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 
-		<div class="form-group row m-2 {{ $errors->has('password') ? 'has-error' : '' }}">
+		<div class="form-group row m-2 @error('password') has-error @enderror">
 			<label for="password" class="col-sm-4 col-form-label col-form-label-sm">Password : </label>
-			<div class="col-sm-8 {{ ($errors->has('password'))?'is-invalid':NULL }}">
-				<input type="password" name="password" id="password" value="{{ old('password') }}" class="form-control form-control-sm {{ ($errors->has('password'))?'is-invalid':NULL }}" placeholder="Password">
-				<div class="invalid-feedback text-start text-danger fw-lighter">
-					@if ($errors->has('password'))
-						@foreach ($errors->get('password') as $error)
-							<span class="">{{ $error }}</span>
-						@endforeach
-					@endif
-				</div>
+			<div class="col-sm-8">
+				<input type="password" name="password" id="password" value="{{ old('password') }}" class="form-control form-control-sm @error('username') is-invalid @enderror" placeholder="Password">
+				@error('password') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 
-		<div class="form-group row m-2 {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
+		<div class="form-group row m-2 @error('password_confirmation') has-error @enderror">
 			<label for="password_confirmation" class="col-sm-4 col-form-label col-form-label-sm">Password Confirmation : </label>
-			<div class="col-sm-8 {{ ($errors->has('password_confirmation'))?'is-invalid':NULL }}">
-				<input type="password" name="password_confirmation" id="password_confirmation" value="{{ old('password_confirmation') }}" class="form-control form-control-sm {{ ($errors->has('password_confirmation'))?'is-invalid':NULL }}" placeholder="Password Confirmation">
-				<div class="invalid-feedback text-start text-danger fw-lighter">
-					@if ($errors->has('password_confirmation'))
-						@foreach ($errors->get('password_confirmation') as $error)
-							<span class="">{{ $error }}</span>
-						@endforeach
-					@endif
-				</div>
+			<div class="col-sm-8">
+				<input type="password" name="password_confirmation" id="password_confirmation" value="{{ old('password_confirmation') }}" class="form-control form-control-sm @error('password_confirmation') is-invalid @enderror" placeholder="Password Confirmation">
+				@error('password_confirmation') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 

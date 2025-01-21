@@ -17,31 +17,19 @@
 		@csrf
 		@method('patch')
 
-		<div class="form-group row m-2 {{ $errors->has('name') ? 'has-error' : '' }}">
+		<div class="form-group row m-2 @error('name') has-error @enderror">
 			<label for="name" class="col-sm-4 col-form-label col-form-label-sm">Name : </label>
-			<div class="col-sm-8 {{ ($errors->has('name'))?'is-invalid':NULL }}">
-				<input type="text" name="name" id="name" value="{{ old('name', $user->name) }}" class="form-control form-control-sm {{ ($errors->has('name'))?'is-invalid':NULL }}" placeholder="Name">
-				<div class="invalid-feedback text-start text-danger fw-lighter">
-					@if ($errors->has('name'))
-						@foreach ($errors->get('name') as $error)
-							<span class="">{{ $error }}</span>
-						@endforeach
-					@endif
-				</div>
+			<div class="col-sm-8">
+				<input type="text" name="name" id="name" value="{{ old('name', $user->name) }}" class="form-control form-control-sm @error('name') is-invalid @enderror" placeholder="Name">
+				@error('name') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 
 		<div class="form-group row m-2 {{ $errors->has('email') ? 'has-error' : '' }}">
 			<label for="email" class="col-sm-4 col-form-label col-form-label-sm">Email : </label>
-			<div class="col-sm-8 {{ ($errors->has('email'))?'is-invalid':NULL }}">
-				<input type="text" name="email" id="email" value="{{ old('email', $user->email) }}" class="form-control form-control-sm {{ ($errors->has('email'))?'is-invalid':NULL }}" placeholder="Email">
-				<div class="invalid-feedback text-start text-danger fw-lighter">
-					@if ($errors->has('email'))
-						@foreach ($errors->get('email') as $error)
-							<span class="">{{ $error }}</span>
-						@endforeach
-					@endif
-				</div>
+			<div class="col-sm-8">
+				<input type="text" name="email" id="email" value="{{ old('email', $user->email) }}" class="form-control form-control-sm @error('email') is-invalid @enderror" placeholder="Email">
+				@error('email') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 			@if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
 				<div>

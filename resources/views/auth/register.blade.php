@@ -3,6 +3,7 @@
 @section('content')
 <div class="col-sm-12 d-flex flex-column align-items-center justify-content-center">
 	<h3>Sign Up</h3>
+
 	<form method="POST" action="{{ route('register') }}" id="form" class="needs-validation">
 		@csrf
 
@@ -10,7 +11,7 @@
 			<label for="name" class="col-sm-4 col-form-label col-form-label-sm">Name : </label>
 			<div class="col-sm-8">
 				<input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control form-control-sm @error('name') is-invalid @enderror" placeholder="Name">
-				@error('username') <div class="invalid-feedback">{{ $message }}</div> @enderror
+				@error('name') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 
@@ -18,7 +19,7 @@
 			<label for="email" class="col-sm-4 col-form-label col-form-label-sm">Email : </label>
 			<div class="col-sm-8">
 				<input type="text" name="email" id="email" value="{{ old('email') }}" class="form-control form-control-sm @error('email') is-invalid @enderror" placeholder="Email">
-				@error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+				@error('email') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 
@@ -26,7 +27,7 @@
 			<label for="username" class="col-sm-4 col-form-label col-form-label-sm">Username : </label>
 			<div class="col-sm-8">
 				<input type="text" name="username" id="username" value="{{ old('username') }}" class="form-control form-control-sm @error('username') is-invalid @enderror" placeholder="Username">
-				@error('username') <div class="invalid-feedback">{{ $message }}</div> @enderror
+				@error('username') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 
@@ -34,14 +35,15 @@
 			<label for="password" class="col-sm-4 col-form-label col-form-label-sm">Password : </label>
 			<div class="col-sm-8">
 				<input type="password" name="password" id="password" value="{{ old('password') }}" class="form-control form-control-sm @error('password') is-invalid @enderror" placeholder="Password">
-				@error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
+				@error('password') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
+			</div>
 		</div>
 
 		<div class="form-group row m-2 @error('password_confirmation') has-error @enderror">
 			<label for="password_confirmation" class="col-sm-4 col-form-label col-form-label-sm">Password Confirmation : </label>
 			<div class="col-sm-8">
 				<input type="password" name="password_confirmation" id="password_confirmation" value="{{ old('password_confirmation') }}" class="form-control form-control-sm @error('password_confirmation') is-invalid @enderror" placeholder="Password Confirmation">
-				@error('password_confirmation') <div class="invalid-feedback">{{ $message }}</div> @enderror
+				@error('password_confirmation') <div class="invalid-feedback fw-lighter">{{ $message }}</div> @enderror
 			</div>
 		</div>
 
