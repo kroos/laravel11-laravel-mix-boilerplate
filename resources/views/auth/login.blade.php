@@ -4,7 +4,7 @@
 <div class="col-sm-12 d-flex flex-column align-items-center justify-content-center">
 	<h3>Sign In</h3>
 	<form method="POST" action="{{ route('login') }}" id="form" class=" needs-validation">
-	@csrf
+		@csrf
 
 		<div class="form-group row m-2 @error('username') has-error @enderror">
 			<label for="username" class="col-sm-4 col-form-label col-form-label-sm">Username : </label>

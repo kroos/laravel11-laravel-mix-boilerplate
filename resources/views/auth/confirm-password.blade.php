@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-sm-6 mx-auto align-items-center justify-content-center">
+<div class="col-sm-12 d-flex flex-column align-items-center justify-content-center">
 	<h3>This is a secure area of the application. Please confirm your password before continuing.</h3>
 	<form method="POST" action="{{ route('password.confirm') }}" id="form" class="needs-validation">
 		@csrf

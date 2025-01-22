@@ -10,19 +10,14 @@ $currentYear = Carbon::now()->year;
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
+	<meta name="keywords" content="" />
+	<!-- CSRF Token -->
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+
 	<!-- <title>Laravel11 Boilerplate</title> -->
 	<title>{{ config('app.name', 'Laravel') }}</title>
 
 	<link href="{{ asset('images/logo.png') }}" type="image/x-icon" rel="icon" />
-
-	<meta name="keywords" content="" />
-
-	<!-- CSRF Token -->
-	<meta name="csrf-token" content="{{ csrf_token() }}">
-
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.bunny.net">
-	<link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
 	<!-- Styles -->
 	<link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
@@ -32,18 +27,19 @@ $currentYear = Carbon::now()->year;
 	@livewireStyles
 
 </head>
-<body class="min-vh-100 row align-items-center justify-content-center mx-auto bg-secondary bg-opacity-75">
-	@include('layouts.navbar')
-
-	<div class="container align-self-center m-0">
-		<div class="col-sm-12 align-self-center justify-content-center m-0">
+<body class="container-fluid min-vh-100 row align-items-center justify-content-center mx-auto bg-secondary bg-opacity-75">
+	<div class="container row align-self-start align-items-center justify-content-center m-0">
+		@include('layouts.navbar')
+		<div class="col-sm-4 justify-content-center m-0">
 			@include('layouts.messages')
 		</div>
-		<div class="col-sm-12 align-self-center justify-content-center m-0">
-			@yield('content')
-		</div>
 	</div>
-	<div class="container align-self-end text-center text-sm text-gray">
+
+	<div class="container p-3 row justify-content-center m-0">
+		@yield('content')
+	</div>
+
+	<div class="container p-3 align-self-end text-center text-sm text-gray fw-lighter m-0">
 		Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
 	</div>
 </body>

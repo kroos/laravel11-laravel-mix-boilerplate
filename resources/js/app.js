@@ -6,6 +6,9 @@
 //
 // Alpine.start();
 
+// window.Alpine = require('alpinejs');
+// Alpine.default.start();
+
 window._ = require('lodash');
 window.Popper = require('../../node_modules/popper.js/src/index').default;
 

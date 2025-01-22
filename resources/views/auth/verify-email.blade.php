@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-sm-6 mx-auto align-items-center justify-content-center">
+<div class="col-sm-12 d-flex flex-column align-items-center justify-content-center">
 	<h3>Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.</h3>
 
 	@if (session('status') == 'verification-link-sent')

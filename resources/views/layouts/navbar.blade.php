@@ -1,5 +1,5 @@
 <!-- navigator -->
-<nav class="navbar navbar-expand-lg bg-primary align-self-start rounded m-0 mb-1" data-bs-theme="dark" style="--bs-bg-opacity: .25;">
+<nav class="navbar navbar-expand-lg bg-primary rounded m-0 mb-1" data-bs-theme="dark" style="--bs-bg-opacity: .25;">
 	<div class="container-fluid">
 			<a class="navbar-brand" href="@auth{{ url('/dashboard') }}@else{{ url('/') }}@endauth">
 				{!! config('app.name') !!}<img src="">
