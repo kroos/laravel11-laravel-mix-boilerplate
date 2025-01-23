@@ -27,21 +27,24 @@ $currentYear = Carbon::now()->year;
 	@livewireStyles
 
 </head>
-<body class="container-fluid min-vh-100 row align-items-center justify-content-center mx-auto bg-secondary bg-opacity-75">
-	<div class="container row align-self-start align-items-center justify-content-center m-0">
+
+<body class="bg-secondary bg-opacity-75">
+	<div class="container-fluid row min-vh-100 align-items-center justify-content-center mx-auto">
+
 		@include('layouts.navbar')
 		<div class="col-sm-4 justify-content-center m-0">
 			@include('layouts.messages')
 		</div>
+
+		<div class="container p-3 row justify-content-center m-0">
+			@yield('content')
+		</div>
+
+		<div class="container py-3 align-self-end text-center fs-6 text-secondary fw-lighter m-0">
+			Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+		</div>
 	</div>
 
-	<div class="container p-3 row justify-content-center m-0">
-		@yield('content')
-	</div>
-
-	<div class="container p-3 align-self-end text-center text-sm text-gray fw-lighter m-0">
-		Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-	</div>
 </body>
 <!-- <script type="module" src="{{ asset('js/fullcalendar/bootstrap5/index.global.js') }}"></script> -->
 <!-- <script type="module" src="{{ asset('js/fullcalendar/daygrid/index.global.js') }}"></script> -->
