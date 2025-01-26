@@ -46,13 +46,13 @@ $currentYear = Carbon::now()->year;
 	</div>
 
 </body>
-<script src="{{ asset('js/fullcalendar/index.global.js') }}"></script>
-<script src="{{ asset('js/chart.js/chart.umd.js') }}"></script>
-<!-- <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script> -->
-<!-- <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script> -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ mix('js/fullcalendar/index.global.js') }}"></script>
+<script src="{{ mix('js/chart.js/dist/chart.umd.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 <script src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>
+<!-- <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script> -->
 <script >
 	jQuery.noConflict ();
 	(function($){
