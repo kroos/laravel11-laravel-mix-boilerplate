@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="col-sm-12 d-flex flex-column align-items-center text-center">
+	<p class="text-3xl font-bold underline">
+		Hello tailwindcss
+	</p>
 	<div class="col-sm-6 m-3">
 		<canvas id="myChart" width="200" height="75"></canvas>
 	</div>
