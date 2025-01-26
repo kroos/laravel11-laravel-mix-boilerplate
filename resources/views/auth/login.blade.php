@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="col-sm-12 d-flex flex-column align-items-center justify-content-center">
-	<h3>Sign In</h3>
-	<form method="POST" action="{{ route('login') }}" id="form" class=" needs-validation">
+	<h3 class="">Sign In</h3>
+	<form method="POST" action="{{ route('login') }}" id="form" class="needs-validation">
 		@csrf
 
 		<div class="form-group row m-2 @error('username') has-error @enderror">
@@ -23,26 +23,24 @@
 		</div>
 
 		<!-- Remember Me -->
-			<div class="form-check col-sm-5 m-4">
-				<input name="remember" class="form-check-input rounded" type="checkbox" value="" id="remember_me">
-				<label class="form-check-label" for="remember_me">
-					Remember me
-				</label>
-			</div>
+		<div class="form-check m-2 d-flex justify-content-center">
+			<input name="remember" class="form-check-input rounded" type="checkbox" value="1" id="remember_me">
+			<label class="form-check-label" for="remember_me">
+				Remember me
+			</label>
+		</div>
 
+			<div class="m-2">
+			<button type="submit" class="btn btn-sm btn-primary m-3">
+				{{ __('Log in') }}
+			</button>
 
-		<div class="col-sm-12 justify-content-end m-4">
 			@if (Route::has('password.request'))
 				<a class="" href="{{ route('password.request') }}">
 					{{ __('Forgot your password?') }}
 				</a>
 			@endif
-
-			<button type="submit" class="btn btn-sm btn-primary m-3">
-				{{ __('Log in') }}
-			</button>
 		</div>
-
 	</form>
 </div>
 @endsection

@@ -47,9 +47,9 @@ $currentYear = Carbon::now()->year;
 
 </body>
 <script src="{{ asset('js/fullcalendar/index.global.js') }}"></script>
+<script src="{{ asset('js/chart.js/chart.umd.js') }}"></script>
 <!-- <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script> -->
 <!-- <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script> -->
-<script src="{{ asset('js/chartjs/chart.umd.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 <script src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>

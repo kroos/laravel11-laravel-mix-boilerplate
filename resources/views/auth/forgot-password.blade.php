@@ -14,7 +14,7 @@
 			</div>
 		</div>
 
-		<div class="text-center m-0">
+		<div class="m-2">
 			<button type="submit" class="btn btn-sm btn-primary m-3">
 				{{ __('Password Reset Link') }}
 			</button>

@@ -47,14 +47,14 @@
 			</div>
 		</div>
 
-		<div class="col-sm-12 justify-self-end m-4">
-			<a class="" href="{{ route('login') }}">
-				{{ __('Already registered?') }}
-			</a>
-
+		<div class="m-2">
 			<button type="submit" class="btn btn-sm btn-primary m-3">
 				{{ __('Register') }}
 			</button>
+
+			<a class="" href="{{ route('login') }}">
+				{{ __('Already registered?') }}
+			</a>
 		</div>
 	</form>
 </div>
