@@ -11,7 +11,6 @@ Integration with packages below :
  - **[pestphp/pest-plugin-laravel]**
 
 Integration with module below :
-
  - **[@claviska/jquery-minicolors]**
  - **[@fortawesome/fontawesome-free]**
  - **[@fullcalendar/bootstrap5]**
@@ -22,7 +21,6 @@ Integration with module below :
  - **[@fullcalendar/multimonth]**
  - **[@fullcalendar/timegrid]**
  - **[@mdi/font]**
- - **[@tailwindcss/forms]**
  - **[alpinejs]**
  - **[animate.css]**
  - **[axios]**
@@ -43,7 +41,6 @@ Integration with module below :
  - **[select2]**
  - **[select2-bootstrap-5-theme]**
  - **[sweetalert2]**
- - **[tailwindcss]**
  - **[laravel-mix]**
 
 ## License

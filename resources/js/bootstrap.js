@@ -1,6 +1,4 @@
 window._ = require('lodash');
-window.Popper = require('../../node_modules/popper.js/src/index').default;
-
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -38,5 +36,13 @@ if (token) {
 //     encrypted: true
 // });
 
-
 require('../../node_modules/jquery-ui/dist/jquery-ui');
+(function ($) {
+	// Iterate over all methods in jQuery UI's namespace
+	$.each($.ui, function (name) {
+			// Check if it's a widget and create a prefixed alias
+			if ($.fn[name]) {
+					$.fn[`jqueryui${name.charAt(0).toUpperCase() + name.slice(1)}`] = $.fn[name];
+			}
+	});
+})(jQuery);

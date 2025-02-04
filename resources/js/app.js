@@ -17,6 +17,7 @@ try {
 	window.$ = window.jQuery = require('jquery/dist/jquery');
 	require('@claviska/jquery-minicolors');
 	require('@fortawesome/fontawesome-free');
+
 	require('datatables.net');
 	require('datatables.net-autofill');
 	require('datatables.net-colreorder');
@@ -28,10 +29,6 @@ try {
 	require('datatables.net-fixedheader-bs5');
 	require('datatables.net-responsive-bs5');
 
-	// these are different breed of javascript which previously compatible with jquery... hareyyyyy
-	// require('fullcalendar');
-	// require('chart.js');
-
 	require('./dataTable-any-number');
 	require('./datetime-moment');
 
@@ -41,7 +38,7 @@ try {
 
 	window.swal = require ('sweetalert2');
 
-	require ('./bootstrapValidator4/js/bootstrapValidator');
+	require('./bootstrapValidator4/js/bootstrapValidator');
 
 	require('./bootstrap');
 
