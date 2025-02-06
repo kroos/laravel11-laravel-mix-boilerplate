@@ -1,10 +1,9 @@
-// import './bootstrap';
 // import Alpine from 'alpinejs';
 // window.Alpine = Alpine;
 // Alpine.start();
 
-// window.Alpine = require('alpinejs');
-// Alpine.default.start();
+window.Alpine = require('alpinejs');
+Alpine.default.start();
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
