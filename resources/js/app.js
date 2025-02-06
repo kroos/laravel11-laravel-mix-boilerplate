@@ -1,7 +1,3 @@
-// import Alpine from 'alpinejs';
-// window.Alpine = Alpine;
-// Alpine.start();
-
 window.Alpine = require('alpinejs');
 Alpine.default.start();
 
