@@ -31,3 +31,4 @@ yarn-error.log
 /public/images
 /public/css/bootstrap.css
 /.phpintel
+/public/mix-manifest.json
