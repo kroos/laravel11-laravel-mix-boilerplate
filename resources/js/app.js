@@ -14,20 +14,22 @@ try {
 	require('@fortawesome/fontawesome-free');
 
 	require('datatables.net');
-	require('datatables.net-autofill');
-	require('datatables.net-colreorder');
-	require('datatables.net-fixedheader');
-	require('datatables.net-responsive');
 	require('datatables.net-bs5');
 	require('datatables.net-autofill-bs5');
 	require('datatables.net-colreorder-bs5');
 	require('datatables.net-fixedheader-bs5');
 	require('datatables.net-responsive-bs5');
+	require('datatables.net-buttons-bs5');
+	require('datatables.net-buttons/js/buttons.html5');
+	require('datatables.net-buttons/js/buttons.print');
+	require('datatables.net-buttons/js/buttons.colVis');
 
 	require('./dataTable-any-number');
 	require('./datetime-moment');
 
 	require('select2');
+	// select2();
+
 	window.moment = require('moment');
 	moment().format();
 
